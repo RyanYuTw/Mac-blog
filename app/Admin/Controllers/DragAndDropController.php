@@ -8,17 +8,23 @@ use Encore\Admin\Widgets\Box;
 use Illuminate\Http\Request;
 
 use App\Models\{TblTask, TblStatus};
+use App\Services\PjaxService;
 
 class DragAndDropController extends Controller
 {
     public function index(Content $content)
     {
+        /**
+         * 取消 Pjax對js載入的影響
+         */
+        PjaxService::getInstance()->noPjax(__FUNCTION__);
+
         // 取得工作狀態
         $statusResult = TblStatus::all();
         // 取得各工作內容及目前狀態
         $taskRows = TblTask::leftJoin('tbl_status', 'tbl_task.status_id', '=', 'tbl_status.id')
-                            ->select('tbl_task.id', 'tbl_task.title', 'tbl_status.id as status_id', 'tbl_status.status_name')
-                            ->get();
+            ->select('tbl_task.id', 'tbl_task.title', 'tbl_status.id as status_id', 'tbl_status.status_name')
+            ->get();
 
         // 工作內容及目前狀態輸出格式轉換
         $taskResult = [];
@@ -33,11 +39,13 @@ class DragAndDropController extends Controller
         return $content
             ->title('待辦事項拖拉')
             ->description('檢視')
-            ->body(new Box('', view('drag_drop', [
+            ->body(new Box(
+                '',
+                view('drag_drop', [
                     'statusResult' => $statusResult,
                     'taskResult'   => $taskResult
-                    ])
-                ));
+                ])
+            ));
     }
 
     /**

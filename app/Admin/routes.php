@@ -19,6 +19,12 @@ Route::group([
     $router->get('/examples/drag_drop', 'DragAndDropController@index');
     // 待辦事項拖拉 API
     $router->put('/examples/drag_drop', 'DragAndDropController@statusUpdate');
+    // 輪播圖頁面
+    $router->get('/examples/carousel', 'CarouselController@index');
+    // 百分比頁面
+    $router->get('/examples/percent', 'PercentController@index');
+    // 讀更多頁面
+    $router->get('/examples/read_more', 'ReadMoreController@index');
     // 多層次選擇頁面-縣市區域為例
     $router->get('/examples/district', 'DistrictController@cascading');
     // 多層次選擇 API-取得區域資料
@@ -42,4 +48,15 @@ Route::group([
     // 郵件管理
     $router->resource('/examples/mail', MailController::class);
 
+    // 過濾器
+    $router->resource('/examples/filter', FilterController::class);
+
+
+    // 優惠券設定
+    $router->get('/examples/coupon', 'CouponController@index');
+
+    // 聊天室
+    // $router->get('/examples/chat', 'ChatsController@index');
+    // $router->get('/examples/chat/messages', 'ChatsController@fetchMessages');
+    // $router->post('/examples/chat/messages', 'ChatsController@sendMessage');
 });

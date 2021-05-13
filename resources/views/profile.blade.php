@@ -1,3 +1,4 @@
+
 <style>
 	.tab-bar {
 		list-style: none;
@@ -107,7 +108,22 @@
 		-moz-border-radius: 10px;
 		-webkit-border-radius: 10px;
 		height: 12px;
+
+        animation-name: progressBar;
+        animation-iteration-count: 1;
+        animation-duration: 3s;
 	}
+
+    @keyframes progressBar {
+        0% {
+            width: 10%;
+        }
+
+        100% {
+        width: 100%;
+        }
+    }
+
 	.progress .progress-bar {
 		background-color: #6bafbd;
 	}
@@ -152,7 +168,7 @@
 		<li class="active">
 			<a href="#overview" data-toggle="tab">
 				<span class="block text-center">
-					<i class="fa fa-home fa-2x"></i> 
+					<i class="fa fa-home fa-2x"></i>
 				</span>
 				總覽/Overview
 			</a>
@@ -160,7 +176,7 @@
 		<li>
 			<a href="#info" data-toggle="tab">
 				<span class="block text-center">
-					<i class="fa fa-user fa-2x"></i> 
+					<i class="fa fa-user fa-2x"></i>
 				</span>
 				基本資料/Info
 			</a>
@@ -168,8 +184,8 @@
 		<li>
 			<a href="#resume" data-toggle="tab">
 				<span class="block text-center">
-					<i class="fa fa-book fa-2x"></i> 
-				</span>	
+					<i class="fa fa-book fa-2x"></i>
+				</span>
 				履歷/Resume
 			</a>
 		</li>
@@ -193,10 +209,10 @@
 					<strong class="font-14">余丁榮</strong>
 					<small class="block text-muted">
 						cecyu.tw@gmail.com
-					</small> 
+					</small>
 				</div>
 			</div>
-			
+
 			<h5 class="headline">
 				資訊技能自我評定
 				<span class="line" style="width:100%;"></span>
@@ -205,7 +221,7 @@
 				<dt>HTML <span class="pull-right">75%</span></dt>
 				<dd>
 					<div class="progress progress-striped">
-						<div class="progress-bar progress-bar-success animated-bar" style="width:75%"></div>
+						<div class="progress-bar progress-bar-success progress-start animated-bar" style="width:75%"></div>
 					</div>
 				</dd>
 				<dt>Bootstrap <span class="pull-right">80%</span></dt>
@@ -213,7 +229,7 @@
 					<div class="progress progress-striped">
 						<div class="progress-bar progress-bar-info animated-bar" style="width:80%"></div>
 					</div>
-				</dd>					
+				</dd>
 				<dt>jQuery <span class="pull-right">70%</span></dt>
 				<dd>
 					<div class="progress progress-striped">
@@ -259,9 +275,9 @@
 								</div>
 								<div class="panel-body">
 									<ul>
-										<li><h5>專長後端 PHP, VB .NET 程式設計, 具 MySQL, MSSQL 資料庫規劃、設計能力</h5></li>
-										<li><h5>熟悉 SQL 語法 Stored Procedure 也能上手</h5></li>
-										<li><h5>具前端 Bootstrap, css, javascript, jquery 設計能力, 雖無法比擬專業前端設計師, 卻也能使頁面正常運作。</h5></li>
+										<li><h5>專長後端 PHP, VB .NET 程式設計, 作業平台為 Linux / Windows</h5></li>
+										<li><h5>熟悉 MySQL, MSSQL 資料庫規劃、設計、操作能力, Stored Procedure 也能上手</h5></li>
+										<li><h5>具前端 Bootstrap, Html, Css, Javascript, Jquery 設計能力</h5></li>
 									</ul>
 								</div>
 							</div>
@@ -270,7 +286,7 @@
 					</div>
 				</div>
 
-				<div class="tab-pane fade in" id="info">						
+				<div class="tab-pane fade in" id="info">
 					<div class="row">
 						<div class="panel panel-info pull-right">
 							<div class="panel-body">
@@ -278,14 +294,14 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4>基本資料</h4>
 						</div>
 						<div class="panel-body">
 							<div class="form-group">
-								<label class="control-label col-md-2">姓名</label>												
+								<label class="control-label col-md-2">姓名</label>
 								<div class="col-md-10">
 									<label class="form-control" value="余丁榮">余丁榮</label>
 								</div>
@@ -326,14 +342,14 @@
 									<h4>自傳</h4>
 								</div>
 								<div class="panel-body">
-									<p>自高中畢業後即報考國防管理學院投入軍旅，於資訊管理學系畢業後服務約24年，不管求學期間或工作期間，均擔任與資訊相關之教師(官)或行政職務，對資訊相關學能與技術有一定的基礎；另因教學研究所需，英文的聽說讀寫也具一定的能力；此外，在研究表現上，主持及參與國科會、國防部與北區健保局的研究計畫案均圓滿完成；在獨立作業上，開發業務所需應用/網頁資訊系統降低作業困難度；在團隊管理上，指導並帶領團隊分獲雲端專案管理競賽第一名及國科會研究創作獎。</p>  
+									<p>自高中畢業後即報考國防管理學院投入軍旅，於資訊管理學系畢業後服務約24年，不管求學期間或工作期間，均擔任與資訊相關之教師(官)或行政職務，對資訊相關學能與技術有一定的基礎；另因教學研究所需，英文的聽說讀寫也具一定的能力；此外，在研究表現上，主持及參與國科會、國防部與北區健保局的研究計畫案均圓滿完成；在獨立作業上，開發業務所需應用/網頁資訊系統降低作業困難度；在團隊管理上，指導並帶領團隊分獲雲端專案管理競賽第一名及國科會研究創作獎。</p>
 									<p>茲將歷年主要職掌及工作成果分述如后：</p>
 									<p>民國79年11月~84年7月，大學畢至碩士班入學期間</p>
-									<ul>	
-										<li>主要職掌：擔任行政與IBM 4341大型主機的操作員</li> 
-										<li>主要成果：撰寫公文檢索與自動報表生成系統、撰寫軍事院校校友會理監事開票及監控系統</li> 
-										<li>外語能力：參加托福考試，成績達軍方赴國外進修門檻</li> 
-									</ul>	  
+									<ul>
+										<li>主要職掌：擔任行政與IBM 4341大型主機的操作員</li>
+										<li>主要成果：撰寫公文檢索與自動報表生成系統、撰寫軍事院校校友會理監事開票及監控系統</li>
+										<li>外語能力：參加托福考試，成績達軍方赴國外進修門檻</li>
+									</ul>
 									<p>民國84年8月~92年8月，碩士畢至博士班期間</p>
 									<ul>
 										<li>
@@ -360,8 +376,8 @@
 												<li>博士論文：模糊限制代理人協商之對手行為模式學習</li>
 											</ul>
 										</li>
-									</ul>  
-									<p>民國92年9月~99年1月，軍職服務期間</p>  
+									</ul>
+									<p>民國92年9月~99年1月，軍職服務期間</p>
 									<ul>
 										<li>國防管理教育中心期間
 											<ul>
@@ -376,7 +392,7 @@
 											</ul>
 										</li>
 
-									</ul> 
+									</ul>
 									<p>民國99年2月~103年8月，教師服務期間</p>
 									<ul>
 										<li>主要職掌：教學、研究、服務</li>
@@ -394,7 +410,7 @@
 												<li>指導研究生之研究主題主要包括：新聞資訊檢索、以文字為基礎之圖像檢索、數位學習主題地圖、資訊安全管理系統執行力檢測及風險管理、鏈結開放資料及網頁應用程式介面技術於知識檢索服務</li>
 											</ul>
 										</li>
-									</ul>	  
+									</ul>
 									<p>民國103年9月~104年4月，耀聖科技股份公司服務期間</p>
 									<ul>
 										<li>主要職掌：系統分析師兼程式設計</li>
@@ -413,7 +429,7 @@
 									<p>民國109年11月~110年4月，脊椎滑脫復健中</p>
 									<br/>
 									<p>就業考量</p>
-									<p>考量孩子就學經費所需及房屋貸款，決定放棄晉升高缺的機會，先行退伍謀取工作機會。</p> 
+									<p>考量孩子就學經費所需及房屋貸款，決定放棄晉升高缺的機會，先行退伍謀取工作機會。</p>
 									<p>年齡是沒辦法改變的事實，或許經驗與態度可以彌補與一般年輕人的落差。不設定找工作之職業類別是期望自己不要侷限於同一領域；然而，即使同一專長領域也難保不會有一番新格局，基本上也不排斥。基於過去的工作、教學研究及團隊管理經歷，與在軍方的人格特質培養下，本人相信自己的加入能為貴公司帶來助力。感謝您撥冗閱讀本人簡歷自傳，至盼有與您進一步面談的機會，謝謝。</p>
 								</div>
 							</div>
@@ -422,5 +438,6 @@
 				</div>
 			</div>
 		</div>
-	</div>			
+	</div>
 </div>
+

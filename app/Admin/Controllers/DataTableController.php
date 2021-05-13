@@ -5,6 +5,7 @@ namespace App\Admin\Controllers;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Widgets\Box;
+use Encore\Admin\Grid;
 
 use DataTables;
 
@@ -14,6 +15,7 @@ class DataTableController extends Controller
 {
     public function index(Content $content)
     {
+        $grid = new Grid(new TblContact);
 
         return $content
             ->title('資料表格')
@@ -27,6 +29,5 @@ class DataTableController extends Controller
         $output = DataTables::of($tblContacts)->make(true);
 
         return $output;
-
     }
 }
